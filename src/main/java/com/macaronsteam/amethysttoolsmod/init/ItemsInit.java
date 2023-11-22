@@ -76,7 +76,7 @@ public class ItemsInit {
   }
 
   private static Properties buildProperties(Item input) {
-    Properties properties = new Properties().tab(input.getItemCategory());
+    Properties properties = new Properties();
     if (input.isFireResistant())
       properties.fireResistant();
     return properties;
@@ -133,7 +133,7 @@ public class ItemsInit {
 
   public static Item tryToCreate(Item input) {
     if (input instanceof ArmorItem iof)
-      return new ArmorItem(buildArmorMaterial(iof.getMaterial()), iof.getSlot(), buildProperties(input)) {
+      return new ArmorItem(buildArmorMaterial(iof.getMaterial()), iof.getType (), buildProperties(input)) {
         @Override
         @OnlyIn(Dist.CLIENT)
         public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {

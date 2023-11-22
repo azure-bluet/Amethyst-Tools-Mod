@@ -8,11 +8,11 @@ import net.minecraft.world.item.Rarity;
 public class MaterialItem extends Item {
 
   public MaterialItem() {
-    super(new Properties().tab(CreativeModeTab.TAB_MATERIALS));
+    super(new Properties());
   }
 
   public MaterialItem(Rarity rarity) {
-    super(new Properties().tab(CreativeModeTab.TAB_MATERIALS).rarity(rarity));
+    super(new Properties().rarity(rarity));
   }
 
 

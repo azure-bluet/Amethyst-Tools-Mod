@@ -8,9 +8,9 @@ import net.minecraft.client.model.TridentModel;
 import net.minecraft.client.model.geom.ModelLayers;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.block.model.ItemTransforms.TransformType;
 import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.server.packs.resources.ResourceManager;
+import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 
 public class AmethystTridentBEWLR extends BlockEntityWithoutLevelRenderer {
@@ -28,7 +28,7 @@ public class AmethystTridentBEWLR extends BlockEntityWithoutLevelRenderer {
   }
 
   @Override
-  public void renderByItem(ItemStack itemstack, TransformType transformtype, PoseStack posestack, MultiBufferSource multibuffersource, int i1, int i2) {
+  public void renderByItem(ItemStack itemstack, ItemDisplayContext context, PoseStack posestack, MultiBufferSource multibuffersource, int i1, int i2) {
     if (itemstack.is(ItemsInit.ITEM_AMETHYST_TRIDENT.get())) {
       posestack.pushPose();
       posestack.scale(1.0F, -1.0F, -1.0F);
@@ -36,7 +36,7 @@ public class AmethystTridentBEWLR extends BlockEntityWithoutLevelRenderer {
       this.tridentModel.renderToBuffer(posestack, vertexconsumer1, i1, i2, 1.0F, 1.0F, 1.0F, 1.0F);
       posestack.popPose();
     } else {
-      super.renderByItem(itemstack, transformtype, posestack, multibuffersource, i1, i2);
+      super.renderByItem(itemstack, context, posestack, multibuffersource, i1, i2);
     }
   }
 }

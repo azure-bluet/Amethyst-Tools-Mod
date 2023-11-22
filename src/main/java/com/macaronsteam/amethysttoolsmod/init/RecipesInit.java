@@ -11,7 +11,7 @@ import com.macaronsteam.amethysttoolsmod.config.AmethystToolsModConfig;
 import com.macaronsteam.amethysttoolsmod.recipe.ConfigValueCondition;
 import com.macaronsteam.amethysttoolsmod.recipe.TippedAmethystArrowRecipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.SimpleRecipeSerializer;
+import net.minecraft.world.item.crafting.SimpleCraftingRecipeSerializer;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,13 +22,13 @@ public class RecipesInit {
   public static final DeferredRegister<RecipeSerializer<?>> RECIPES = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, AmethystToolsMod.MODID);
 
   public static void register() {
-    RECIPE_AMETHYST_TIPPED_ARROW = register("crafting_special_amethysttippedarrow", () -> new SimpleRecipeSerializer<>(TippedAmethystArrowRecipe::new), AmethystToolsModConfig.enableAmethystArrows.get(), AmethystToolsModConfig.enableExtraArrows.get());
+    RECIPE_AMETHYST_TIPPED_ARROW = register("crafting_special_amethysttippedarrow", () -> new SimpleCraftingRecipeSerializer<>(TippedAmethystArrowRecipe::new), AmethystToolsModConfig.enableAmethystArrows.get(), AmethystToolsModConfig.enableExtraArrows.get());
     CraftingHelper.register(ConfigValueCondition.Serializer.INSTANCE);
   }
 
-  private static RegistryObject<RecipeSerializer<?>> register(String name, Supplier recipe, boolean... condition) {
+  private static RegistryObject<RecipeSerializer<?>> register(String name, Supplier <SimpleCraftingRecipeSerializer <?>> recipe, boolean... condition) {
     if (!Booleans.contains(condition, false) && name != null && recipe != null)
       return RECIPES.register(name, recipe);
-    return ReflectionUtil.instantiate(RegistryObject.class);
+    return ReflectionUtil.instantiate (RegistryObject.class);
   }
 }

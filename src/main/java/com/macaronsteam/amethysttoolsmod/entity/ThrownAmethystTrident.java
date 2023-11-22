@@ -8,6 +8,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LightningBolt;
@@ -58,7 +59,7 @@ public class ThrownAmethystTrident extends ThrownTrident {
     }
 
     Entity entity1 = this.getOwner();
-    DamageSource damagesource = DamageSource.trident(this, entity1 == null ? this : entity1);
+    DamageSource damagesource = new DamageSources (this.level.registryAccess ()).trident(this, entity1 == null ? this : entity1);
     ObfuscationReflectionHelper.setPrivateValue(ThrownTrident.class, this, true, "f_37556_");
     SoundEvent soundevent = SoundEvents.TRIDENT_HIT;
     if (entity.hurt(damagesource, f)) {

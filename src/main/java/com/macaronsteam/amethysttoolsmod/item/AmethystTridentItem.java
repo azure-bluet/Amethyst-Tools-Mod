@@ -22,21 +22,20 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.TridentItem;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 public class AmethystTridentItem extends TridentItem {
 
   private final ImmutableMultimap<Attribute, AttributeModifier> defaultModifiers;
 
   public AmethystTridentItem() {
-    super(new Properties().tab(CreativeModeTab.TAB_COMBAT).defaultDurability((int) (Items.TRIDENT.getMaxDamage() * durabilityMultiplier.get())));
+    super(new Properties().defaultDurability((int) (Items.TRIDENT.getMaxDamage() * durabilityMultiplier.get())));
     ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
     builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Tool modifier", 8.0D + extraAttackDamage.get(), AttributeModifier.Operation.ADDITION));
     builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Tool modifier", -2.9F, AttributeModifier.Operation.ADDITION));
@@ -54,11 +53,11 @@ public class AmethystTridentItem extends TridentItem {
   }
 
   @Override
-  public void initializeClient(Consumer<IItemRenderProperties> consumer) {
-    consumer.accept(new IItemRenderProperties() {
+  public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+    consumer.accept(new IClientItemExtensions() {
 
       @Override
-      public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
+      public BlockEntityWithoutLevelRenderer getCustomRenderer() {
         return AmethystTridentBEWLR.INSTANCE;
       }
     });
@@ -104,7 +103,7 @@ public class AmethystTridentItem extends TridentItem {
             f3 *= f5 / f4;
             player.push(f1, f2, f3);
             player.startAutoSpinAttack(20);
-            if (player.isOnGround()) {
+            if (player.onGround()) {
               player.move(MoverType.SELF, new Vec3(0.0D, 1.1999999F, 0.0D));
             }
 

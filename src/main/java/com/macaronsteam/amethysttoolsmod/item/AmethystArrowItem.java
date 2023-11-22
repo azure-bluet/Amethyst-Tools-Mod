@@ -49,7 +49,7 @@ public class AmethystArrowItem extends ArrowItem {
     }
   }
 
-  public static final Properties PROPERTIES = new Properties().tab(CreativeModeTab.TAB_COMBAT);
+  public static final Properties PROPERTIES = new Properties();
 
   public AmethystArrowItem() {
     super(PROPERTIES);

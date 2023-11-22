@@ -7,6 +7,7 @@ import static com.macaronsteam.amethysttoolsmod.config.AmethystToolsModConfig.ex
 import static com.macaronsteam.amethysttoolsmod.config.AmethystToolsModConfig.extraToughness;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -19,13 +20,13 @@ public class AmethystArmorMaterial implements ArmorMaterial {
   }
 
   @Override
-  public int getDefenseForSlot(EquipmentSlot slot) {
-    return armorMaterial.getDefenseForSlot(slot) + extraArmor.get();
+  public int getDefenseForType(ArmorItem.Type slot) {
+    return armorMaterial.getDefenseForType (slot) + extraArmor.get();
   }
 
   @Override
-  public int getDurabilityForSlot(EquipmentSlot slot) {
-    return (int) (armorMaterial.getDurabilityForSlot(slot) * durabilityMultiplier.get());
+  public int getDurabilityForType(ArmorItem.Type slot) {
+    return (int) (armorMaterial.getDurabilityForType (slot) * durabilityMultiplier.get());
   }
 
   @Override

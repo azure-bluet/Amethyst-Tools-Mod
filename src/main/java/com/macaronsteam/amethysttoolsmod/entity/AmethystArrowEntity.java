@@ -27,6 +27,7 @@ import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.registries.ForgeRegistries;
 
 public class AmethystArrowEntity extends AbstractArrow {
   private static final EntityDataAccessor<Integer> ID_EFFECT_COLOR = SynchedEntityData.defineId(Arrow.class, EntityDataSerializers.INT);
@@ -63,7 +64,7 @@ public class AmethystArrowEntity extends AbstractArrow {
   public void addAdditionalSaveData(CompoundTag compoundtag) {
     super.addAdditionalSaveData(compoundtag);
     if (this.potion != Potions.EMPTY) {
-      compoundtag.putString("Potion", Registry.POTION.getKey(this.potion).toString());
+      compoundtag.putString("Potion", ForgeRegistries.POTIONS.getKey(this.potion).toString());
     }
     if (this.fixedColor) {
       compoundtag.putInt("Color", this.getColor());
