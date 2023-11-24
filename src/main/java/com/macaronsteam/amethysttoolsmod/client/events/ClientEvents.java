@@ -27,8 +27,8 @@ public class ClientEvents {
 
   @OnlyIn(Dist.CLIENT)
   public static void doClientWork() {
-    EntitiesInit.ENTITY_AMETHYST_ARROW.ifPresent(entity -> EntityRenderers.register(entity, ctx -> new AmethystArrowRenderer(ctx, "textures/models/amethyst_arrow.png")));
-    EntitiesInit.ENTITY_AMETHYST_SPECTRAL_ARROW.ifPresent(entity -> EntityRenderers.register(entity, ctx -> new AmethystArrowRenderer(ctx, "textures/models/amethyst_spectral_arrow.png")));
+    EntitiesInit.ENTITY_AMETHYST_ARROW.ifPresent(entity -> EntityRenderers.register(entity, ctx -> new AmethystArrowRenderer <> (ctx, "textures/models/amethyst_arrow.png")));
+    EntitiesInit.ENTITY_AMETHYST_SPECTRAL_ARROW.ifPresent(entity -> EntityRenderers.register(entity, ctx -> new AmethystArrowRenderer <> (ctx, "textures/models/amethyst_spectral_arrow.png")));
     EntitiesInit.ENTITY_AMETHYST_TRIDENT.ifPresent(entity -> EntityRenderers.register(entity, AmethystTridentRenderer::new));
     ItemsInit.ITEM_AMETHYST_TRIDENT.ifPresent(item -> ItemProperties.register(item, new ResourceLocation("throwing"), (itemstack, level, livingentity, i) -> livingentity != null && livingentity.isUsingItem() && livingentity.getUseItem() == itemstack ? 1.0F : 0.0F));
   }

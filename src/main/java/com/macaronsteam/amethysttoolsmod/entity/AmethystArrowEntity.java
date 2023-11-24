@@ -9,7 +9,6 @@ import java.util.Set;
 import com.macaronsteam.amethysttoolsmod.config.AmethystToolsModConfig;
 import com.macaronsteam.amethysttoolsmod.init.EntitiesInit;
 import com.macaronsteam.amethysttoolsmod.init.ItemsInit;
-import net.minecraft.core.Registry;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;

@@ -108,7 +108,7 @@ public class ItemsInit {
     ITEM_AMETHYST_TRIDENT = register("amethyst_trident", () -> new AmethystTridentItem(), enableAmethystTrident.get());
   }
 
-  public static RegistryObject<Item> register(String name, Supplier item, boolean... condition) {
+  public static RegistryObject<Item> register(String name, Supplier <Item> item, boolean... condition) {
     if (!Booleans.contains(condition, false) && name != null && item != null)
       return ITEMS.register(name, item);
     return ReflectionUtil.instantiate(RegistryObject.class);
