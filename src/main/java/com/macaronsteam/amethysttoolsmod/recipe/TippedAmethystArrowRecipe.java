@@ -1,5 +1,5 @@
 /**
- * Copyright © 2022 Kitoglav Licensed under the Apache License, Version 2.0
+ * Copyright © 2023 Kitoglav, azure__bluet. Licensed under the Apache License, Version 2.0
  **/
 package com.macaronsteam.amethysttoolsmod.recipe;
 
