@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "base": {
           "item": "minecraft:trident"
         },

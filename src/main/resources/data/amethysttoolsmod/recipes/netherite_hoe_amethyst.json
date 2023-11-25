@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "base": {
           "item": "minecraft:netherite_hoe"
         },
@@ -18,6 +18,9 @@
         },
         "result": {
           "item": "amethysttoolsmod:netherite_hoe_amethyst"
+        },
+        "template": {
+          "item": "amethysttoolsmod:amethyst_dust"
         }
       }
     }

@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "base": {
           "item": "minecraft:diamond_chestplate"
         },
@@ -18,6 +18,9 @@
         },
         "result": {
           "item": "amethysttoolsmod:diamond_chestplate_amethyst"
+        },
+        "template": {
+          "item": "amethysttoolsmod:amethyst_dust"
         }
       }
     }

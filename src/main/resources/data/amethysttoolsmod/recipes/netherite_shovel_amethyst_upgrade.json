@@ -18,7 +18,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "base": {
           "item": "amethysttoolsmod:diamond_shovel_amethyst"
         },
@@ -27,6 +27,9 @@
         },
         "result": {
           "item": "amethysttoolsmod:netherite_shovel_amethyst"
+        },
+        "template": {
+          "item": "minecraft:netherite_upgrade_smithing_template"
         }
       }
     }

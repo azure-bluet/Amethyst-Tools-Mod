@@ -1,34 +1,37 @@
 {
-  "type": "forge:conditional",
-  "recipes": [
-    {
-      "conditions": [
+    "type": "forge:conditional",
+    "recipes": [
         {
-          "values": [
-            {
-              "configValue": "enableDiamond",
-              "type": "amethysttoolsmod:config_value"
-            },
-            {
-              "configValue": "enableNetherite",
-              "type": "amethysttoolsmod:config_value"
+            "conditions": [
+                {
+                    "values": [
+                        {
+                            "configValue": "enableDiamond",
+                            "type": "amethysttoolsmod:config_value"
+                        },
+                        {
+                            "configValue": "enableNetherite",
+                            "type": "amethysttoolsmod:config_value"
+                        }
+                    ],
+                    "type": "forge:and"
+                }
+            ],
+            "recipe": {
+                "type": "minecraft:smithing_transform",
+                "template": {
+                    "item": "minecraft:netherite_upgrade_smithing_template"
+                },
+                "base": {
+                    "item": "amethysttoolsmod:diamond_axe_amethyst"
+                },
+                "addition": {
+                    "item": "minecraft:netherite_ingot"
+                },
+                "result": {
+                    "item": "amethysttoolsmod:netherite_axe_amethyst"
+                }
             }
-          ],
-          "type": "forge:and"
         }
-      ],
-      "recipe": {
-        "type": "minecraft:smithing",
-        "base": {
-          "item": "amethysttoolsmod:diamond_axe_amethyst"
-        },
-        "addition": {
-          "item": "netherite_ingot"
-        },
-        "result": {
-          "item": "amethysttoolsmod:netherite_axe_amethyst"
-        }
-      }
-    }
-  ]
+    ]
 }

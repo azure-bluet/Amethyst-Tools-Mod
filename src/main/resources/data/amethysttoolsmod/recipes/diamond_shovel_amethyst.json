@@ -9,7 +9,7 @@
         }
       ],
       "recipe": {
-        "type": "minecraft:smithing",
+        "type": "minecraft:smithing_transform",
         "base": {
           "item": "minecraft:diamond_shovel"
         },
@@ -18,6 +18,9 @@
         },
         "result": {
           "item": "amethysttoolsmod:diamond_shovel_amethyst"
+        },
+        "template": {
+          "item": "amethysttoolsmod:amethyst_dust"
         }
       }
     }
