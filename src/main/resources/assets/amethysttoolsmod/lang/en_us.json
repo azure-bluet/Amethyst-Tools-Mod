@@ -57,5 +57,6 @@
 	"item.amethysttoolsmod.amethyst_trident": "Trident with Amethyst",
 	"entity.amethysttoolsmod.amethyst_arrow_entity": "Amethyst Arrow",
 	"entity.amethysttoolsmod.amethyst_spectral_arrow_entity": "Amethyst Spectral Arrow",
-	"entity.amethysttoolsmod.amethyst_trident_entity": "Trident with Amethyst"
+	"entity.amethysttoolsmod.amethyst_trident_entity": "Trident with Amethyst",
+	"tab.amethysttoolsmod.default": "Amethyst Tools"
 }

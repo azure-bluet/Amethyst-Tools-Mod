@@ -41,7 +41,7 @@
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.leaping": "跳跃提升紫水晶箭",
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.fire_resistance": "抗火紫水晶箭",
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.swiftness": "迅捷紫水晶箭",
-	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.slowness": "缓慢紫水晶",
+	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.slowness": "缓慢紫水晶箭",
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.water_breathing": "水下呼吸紫水晶箭",
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.healing": "治疗紫水晶箭",
 	"item.amethysttoolsmod.amethyst_tipped_arrow.effect.harming": "伤害紫水晶箭",
@@ -57,5 +57,6 @@
 	"item.amethysttoolsmod.amethyst_trident": "镶紫水晶的三叉戟",
 	"entity.amethysttoolsmod.amethyst_arrow_entity": "紫水晶箭",
 	"entity.amethysttoolsmod.amethyst_spectral_arrow_entity": "紫水晶光灵箭",
-	"entity.amethysttoolsmod.amethyst_trident_entity": "镶紫水晶的三叉戟"
+	"entity.amethysttoolsmod.amethyst_trident_entity": "镶紫水晶的三叉戟",
+	"tab.amethysttoolsmod.default": "紫水晶工具"
 }
