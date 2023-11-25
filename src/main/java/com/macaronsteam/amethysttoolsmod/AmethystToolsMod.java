@@ -1,5 +1,5 @@
 /**
- * Copyright © 2022 Kitoglav Licensed under the Apache License, Version 2.0
+ * Copyright © 2023 Kitoglav, azure__bluet Licensed under the Apache License, Version 2.0
  **/
 package com.macaronsteam.amethysttoolsmod;
 
@@ -8,6 +8,8 @@ import com.macaronsteam.amethysttoolsmod.config.AmethystToolsModConfig;
 import com.macaronsteam.amethysttoolsmod.init.EntitiesInit;
 import com.macaronsteam.amethysttoolsmod.init.ItemsInit;
 import com.macaronsteam.amethysttoolsmod.init.RecipesInit;
+import com.macaronsteam.amethysttoolsmod.init.TabInit;
+
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -29,6 +31,7 @@ public class AmethystToolsMod {
     ItemsInit.register();
     RecipesInit.RECIPES.register(bus);
     RecipesInit.register();
+    TabInit.registry.register (bus);
   }
 
   private void setup(FMLCommonSetupEvent event) {

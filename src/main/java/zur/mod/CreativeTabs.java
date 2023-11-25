@@ -1,3 +1,6 @@
+/**
+ * Copyright © 2023 azure__bluet Licensed under the Apache License, Version 2.0
+ **/
 package zur.mod;
 
 import net.minecraftforge.registries.RegistryObject;
@@ -8,7 +11,10 @@ import java.util.function.Supplier;
 
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
 
 public class CreativeTabs {
     public static RegistryObject <CreativeModeTab> tab (
@@ -32,5 +38,17 @@ public class CreativeTabs {
                 )
                 .build ()
         );
+    }
+
+    public static Supplier <ItemStack> getter (RegistryObject <Item> item) {
+        return () -> new ItemStack (item.get ());
+    }
+
+    public static Supplier <ItemStack> tipped (Supplier <ItemStack> original, Supplier <Potion> potion) {
+        return () -> {
+            ItemStack st = original.get ();
+            PotionUtils.setPotion (st, potion.get ());
+            return st;
+        };
     }
 }

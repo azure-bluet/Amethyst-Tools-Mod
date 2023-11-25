@@ -114,9 +114,11 @@ public class ItemsInit {
     return ReflectionUtil.instantiate(RegistryObject.class);
   }
 
+  public static final String[] types = new String[] {"sword", "pickaxe", "axe", "shovel", "hoe", "boots", "leggings", "chestplate", "helmet"};
+  public static final String[] mats = new String[] {"iron", "diamond", "netherite"};
+
   public static void registerAmethystEquipment() {
-    String[] types = new String[] {"sword", "pickaxe", "axe", "shovel", "hoe", "boots", "leggings", "chestplate", "helmet"};
-    List<Item> list = Stream.of("iron", "diamond", "netherite").flatMap(str -> {
+    List<Item> list = Stream.of(mats).flatMap(str -> {
       String[] arr = new String[types.length];
       IntStream.range(0, types.length).forEach(i -> arr[i] = String.join("_", str, types[i]));
       return Stream.of(arr);
